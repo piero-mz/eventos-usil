@@ -59,4 +59,28 @@ export const events: Event[] = [
     tags: ["cloud", "aws", "devops"],
     organizer: "Facultad de Ingeniería",
   },
+  {
+    title: "Prueba v4",
+    description: "Ya estoy cansado xd",
+    date: "2026-10-09",
+    time: "18:00",
+    location: "Aula Magna",
+    type: "Presencial",
+    is_free: true,
+    image_url:
+      "https://www.turiweb.pe/wp-content/uploads/2020/12/miraflores-211220.jpg",
+    tags: [
+      "sistemas",
+      "software",
+      "ciberseguridad",
+      "ia",
+      "cloud",
+      "redes",
+      "devops",
+      "web",
+      "mobile",
+      "data-science",
+    ],
+    organizer: "OKI",
+  },
 ];
