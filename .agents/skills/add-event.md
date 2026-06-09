@@ -10,7 +10,7 @@ Cuando un Issue tenga el label `evento` y haya sido creado con el template "Agre
 
 ### 1. Leer el Issue
 Extrae estos campos del Issue:
-- **Nombre del evento** → `title`
+- **Título del Issue** → `title` (leer directamente del título del Issue, ignorando el prefijo [EVENTO])
 - **Descripción** → `description`
 - **Fecha** → `date` (debe estar en formato `YYYY-MM-DD`)
 - **Hora** → `time` (formato `HH:MM`)
