@@ -7,14 +7,6 @@ body:
     attributes:
       value: Completa el formulario y un mantenedor revisara tu propuesta. Gracias por contribuir!
 
-  - type: input
-    id: title
-    attributes:
-      label: Nombre del evento
-      placeholder: ej. Workshop de Docker para principiantes
-    validations:
-      required: true
-
   - type: textarea
     id: description
     attributes:
