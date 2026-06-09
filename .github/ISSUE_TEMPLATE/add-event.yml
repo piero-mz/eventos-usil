@@ -102,25 +102,4 @@ body:
   - type: checkboxes
     id: tags
     attributes:
-      label: Temas del evento
-      description: Selecciona todos los que apliquen
-      options:
-        - label: Ingenieria de Sistemas
-        - label: Ingenieria de Software
-        - label: Ciberseguridad
-        - label: Inteligencia Artificial
-        - label: Cloud Computing
-        - label: Redes y Telecomunicaciones
-        - label: DevOps
-        - label: Desarrollo Web
-        - label: Desarrollo Movil
-        - label: Data Science
-
-  - type: input
-    id: organizer
-    attributes:
-      label: Organizador
-      description: Opcional
-      placeholder: ej. Facultad de Ingenieria
-    validations:
-      required: false
+      label: Temas del
