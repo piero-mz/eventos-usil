@@ -1,7 +1,7 @@
 name: Agregar Evento
 description: Proponer un nuevo evento tech para publicar en el sitio
 title: "[EVENTO] "
-labels: ["evento"]
+labels: ["evento", "jules"]
 body:
   - type: markdown
     attributes:
