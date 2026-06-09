@@ -33,6 +33,17 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: type
+    attributes:
+      label: Modalidad
+      options:
+        - Presencial
+        - Virtual
+        - Hibrido
+    validations:
+      required: true
+      
   - type: input
     id: location
     attributes:
@@ -50,17 +61,6 @@ body:
       placeholder: "https://zoom.us/... o https://meet.google.com/..."
     validations:
       required: false
-
-  - type: dropdown
-    id: type
-    attributes:
-      label: Modalidad
-      options:
-        - Presencial
-        - Virtual
-        - Hibrido
-    validations:
-      required: true
 
   - type: dropdown
     id: is_free
