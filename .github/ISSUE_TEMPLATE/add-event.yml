@@ -88,12 +88,12 @@ body:
     validations:
       required: false
 
-  - type: input
+  - type: textarea
     id: image_url
     attributes:
       label: Imagen del evento
-      description: "Opcional - URL del flyer o logo. Puedes arrastrar la imagen directamente a este Issue y pegar el link que genera GitHub. Formatos: JPG, PNG, GIF, WEBP"
-      placeholder: "https://..."
+      description: "Opcional - Arrastra tu flyer o logo directamente aqui. GitHub lo sube automaticamente y aparecera en este campo."
+      placeholder: "Arrastra la imagen aqui o pega una URL..."
     validations:
       required: false
 
