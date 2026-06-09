@@ -3,13 +3,12 @@ export interface Event {
   description: string;
   date: string; // "YYYY-MM-DD"
   time: string; // "HH:MM"
-  type: "Presencial" | "Virtual" | "Hibrido";
+  location: string;
+  type: "Presencial" | "Virtual" | "Híbrido";
   is_free: boolean;
+  price?: string; // ej. "S/ 30" — solo si is_free es false
+  registration_url?: string; // opcional — no todos los eventos requieren registro
   tags: string[];
-  location?: string;       // opcional — presencial/híbrido
-  meeting_url?: string;    // opcional — virtual/híbrido
-  price?: string;          // opcional — solo si is_free es false
-  registration_url?: string; // opcional
-  image_url?: string;      // opcional
-  organizer?: string;      // opcional
+  organizer?: string;
+  image_url?: string;
 }
