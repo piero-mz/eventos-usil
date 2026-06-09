@@ -6,74 +6,77 @@ Procesa Issues con el label `evento` y agrega el nuevo evento al archivo `app/da
 ## Cuándo usar este skill
 Cuando un Issue tenga el label `evento` y haya sido creado con el template "Agregar Evento".
 
+## Campos obligatorios y opcionales
+
+Obligatorios (sin estos no crear el PR):
+- title, description, date, time, type, is_free, tags
+
+Opcionales (omitir del objeto si están vacíos o dicen "No response"):
+- location, meeting_url, price, registration_url, image_url, organizer
+
 ## Pasos
 
 ### 1. Leer el Issue
-Extrae estos campos del Issue:
-- **Título del Issue** → `title` (leer directamente del título del Issue, ignorando el prefijo [EVENTO])
+- **Título del Issue** → `title` (ignorar el prefijo [EVENTO])
 - **Descripción** → `description`
-- **Fecha** → `date` (debe estar en formato `YYYY-MM-DD`)
-- **Hora** → `time` (formato `HH:MM`)
-- **Lugar** → `location`
-- **Modalidad** → `type` (exactamente: `"Presencial"`, `"Virtual"` o `"Híbrido"`)
-- **¿Es gratuito?** → `is_free` (`true` si dice "Sí, es gratuito", `false` si no)
-- **Precio** → `price` (solo incluir si `is_free` es `false` y el campo no está vacío)
-- **URL de registro** → `registration_url` (opcional, omitir si está vacío o dice "No response")
-- **Temas del evento** → `tags` (array, ver conversión abajo)
-- **Organizador** → `organizer` (solo incluir si no está vacío)
+- **Fecha** → `date` (formato YYYY-MM-DD)
+- **Hora** → `time` (formato HH:MM)
+- **Lugar** → `location` (OPCIONAL)
+- **Link de la reunion** → `meeting_url` (OPCIONAL)
+- **Modalidad** → `type` ("Presencial", "Virtual" o "Hibrido")
+- **Es gratuito?** → `is_free` (true si dice "Si, es gratuito")
+- **Precio** → `price` (OPCIONAL, solo si is_free es false)
+- **URL de registro** → `registration_url` (OPCIONAL)
+- **Imagen del evento** → `image_url` (OPCIONAL — si contiene markdown ![...](url), extraer solo la URL)
+- **Temas del evento** → `tags`
+- **Organizador** → `organizer` (OPCIONAL)
 
 ### 2. Convertir los tags
-Convierte los temas seleccionados a kebab-case en minúsculas:
-- "Ingeniería de Sistemas" → `"sistemas"`
-- "Ingeniería de Software" → `"software"`
+- "Ingenieria de Sistemas" → `"sistemas"`
+- "Ingenieria de Software" → `"software"`
 - "Ciberseguridad" → `"ciberseguridad"`
 - "Inteligencia Artificial" → `"ia"`
 - "Cloud Computing" → `"cloud"`
 - "Redes y Telecomunicaciones" → `"redes"`
 - "DevOps" → `"devops"`
 - "Desarrollo Web" → `"web"`
-- "Desarrollo Móvil" → `"mobile"`
+- "Desarrollo Movil" → `"mobile"`
 - "Data Science" → `"data-science"`
 
 ### 3. Construir el objeto evento
+Incluir solo los campos que tienen valor:
 ```typescript
 {
   title: "...",
   description: "...",
   date: "YYYY-MM-DD",
   time: "HH:MM",
-  location: "...",
-  type: "Presencial" | "Virtual" | "Híbrido",
+  type: "Presencial" | "Virtual" | "Hibrido",
   is_free: true | false,
-  price: "S/ XX",         // solo si is_free es false
-  registration_url: "https://...",
   tags: ["tag1", "tag2"],
-  organizer: "...",       // solo si fue proporcionado
+  // opcionales — incluir solo si tienen valor:
+  location: "...",
+  meeting_url: "https://...",
+  price: "S/ XX",
+  registration_url: "https://...",
+  image_url: "https://...",
+  organizer: "...",
 }
 ```
 
 ### 4. Actualizar `app/data/events.ts`
-- Abre el archivo `app/data/events.ts`
-- Agrega el nuevo evento al array `events`
-- Mantén el array ordenado por fecha de más próxima a más lejana (ascendente)
-- Respeta el formato y la indentación existente
+- Agregar el evento al array `events`
+- Mantener ordenado por fecha ascendente
+- Respetar formato e indentación existente
 
 ### 5. Crear el Pull Request
-- Branch name: `evento/[slug-del-titulo]` (ej. `evento/workshop-docker-principiantes`)
-- Título del PR: `feat: agregar evento "[título del evento]"`
-- Descripción del PR:
-  ```
-  Agrega el evento propuesto en el Issue #[número].
-  
-  - Título: [título]
-  - Fecha: [fecha] a las [hora]
-  - Modalidad: [tipo]
-  - Costo: [Gratuito / precio]
-  ```
+- Branch: `evento/[slug-del-titulo]`
+- Título: `feat: agregar evento "[título]"`
 
 ## Reglas importantes
 - No modificar ningún otro archivo
-- Si `registration_url` está vacío o dice "No response", omitir el campo del objeto
-- Si la fecha tiene un formato incorrecto, intentar corregirla a `YYYY-MM-DD`
-- Si la URL de registro no empieza con `https://`, agregarle el prefijo
-- Si algún campo requerido está vacío, dejar un comentario en el Issue solicitando la información faltante y no crear el PR
+- Si un campo opcional está vacío o dice "No response", simplemente omitirlo
+- Solo detener el proceso si falta un campo OBLIGATORIO
+- Si la fecha tiene formato incorrecto, corregirla a YYYY-MM-DD
+- Si una URL no empieza con https://, agregarle el prefijo
+- Para image_url: si el valor contiene markdown tipo ![texto](url), extraer solo la URL
