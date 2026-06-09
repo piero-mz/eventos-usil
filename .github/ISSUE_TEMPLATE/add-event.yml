@@ -43,12 +43,12 @@ body:
         - Hibrido
     validations:
       required: true
-      
+
   - type: input
     id: location
     attributes:
       label: Lugar
-      description: Solo para eventos Presenciales o Hibridos. Deja vacio si es Virtual.
+      description: Para eventos Presenciales o Hibridos. Dejar vacio si es Virtual.
       placeholder: ej. Auditorio Principal - Sede Miraflores
     validations:
       required: false
@@ -57,7 +57,7 @@ body:
     id: meeting_url
     attributes:
       label: Link de la reunion
-      description: Solo para eventos Virtuales o Hibridos. Deja vacio si es Presencial.
+      description: Para eventos Virtuales o Hibridos. Dejar vacio si es Presencial.
       placeholder: "https://zoom.us/... o https://meet.google.com/..."
     validations:
       required: false
@@ -76,7 +76,7 @@ body:
     id: price
     attributes:
       label: Precio
-      description: Solo si el evento tiene costo. Deja vacio si es gratuito.
+      description: Solo si el evento tiene costo. Dejar vacio si es gratuito.
       placeholder: "S/ 30"
     validations:
       required: false
@@ -85,7 +85,7 @@ body:
     id: registration_url
     attributes:
       label: URL de registro o mas informacion
-      description: Opcional - deja vacio si el evento es de entrada libre
+      description: Opcional - dejar vacio si es de entrada libre
       placeholder: "https://forms.gle/... o https://eventbrite.com/..."
     validations:
       required: false
@@ -94,7 +94,7 @@ body:
     id: image_url
     attributes:
       label: Imagen del evento
-      description: "Opcional - Arrastra tu flyer o logo directamente aqui. GitHub lo sube automaticamente y aparecera en este campo."
+      description: "Opcional - Arrastra tu flyer o logo directamente aqui. GitHub lo sube automaticamente."
       placeholder: "Arrastra la imagen aqui o pega una URL..."
     validations:
       required: false

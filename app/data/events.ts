@@ -1,7 +1,7 @@
 import { Event } from "../types/event";
 
 // ⚠️ NO EDITAR MANUALMENTE — los eventos se agregan via GitHub Issues
-// Para publicar un evento: https://github.com/TU-USUARIO/eventos-usil/issues/new/choose
+// Para publicar un evento: https://github.com/piero-mz/eventos-usil/issues/new/choose
 
 export const events: Event[] = [
   {
@@ -37,7 +37,7 @@ export const events: Event[] = [
       "Conferencia sobre cómo la inteligencia artificial está transformando la gestión de sistemas y los procesos empresariales en Perú.",
     date: "2026-08-06",
     time: "19:00",
-    location: "Online — Zoom",
+    meeting_url: "https://zoom.us/example",
     type: "Virtual",
     is_free: true,
     registration_url: "https://forms.gle/example3",
@@ -51,7 +51,8 @@ export const events: Event[] = [
     date: "2026-08-20",
     time: "17:00",
     location: "Auditorio B — Sede Miraflores",
-    type: "Híbrido",
+    meeting_url: "https://zoom.us/example2",
+    type: "Hibrido",
     is_free: false,
     price: "S/ 30",
     registration_url: "https://forms.gle/example4",
