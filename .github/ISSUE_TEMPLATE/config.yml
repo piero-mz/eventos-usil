@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ver eventos publicados
+    url: https://eventos-usil.vercel.app
+    about: Mira todos los eventos disponibles en el sitio

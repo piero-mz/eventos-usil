@@ -1,0 +1,116 @@
+name: 📅 Agregar Evento
+description: Propón un nuevo evento tech para publicar en el sitio
+title: "[EVENTO] "
+labels: ["evento"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Completa el formulario y un mantenedor revisará tu propuesta. ¡Gracias por contribuir!
+
+  - type: input
+    id: title
+    attributes:
+      label: Nombre del evento
+      placeholder: ej. "Workshop de Docker para principiantes"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      placeholder: Describe brevemente el evento, qué aprenderán los asistentes y a quién va dirigido.
+      value: ""
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Fecha
+      description: Formato YYYY-MM-DD
+      placeholder: "2026-09-15"
+    validations:
+      required: true
+
+  - type: input
+    id: time
+    attributes:
+      label: Hora de inicio
+      description: Formato HH:MM en 24 horas
+      placeholder: "18:00"
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Lugar
+      placeholder: ej. "Auditorio Principal — Sede Miraflores" o "Online — Zoom"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Modalidad
+      options:
+        - Presencial
+        - Virtual
+        - Híbrido
+    validations:
+      required: true
+
+  - type: dropdown
+    id: is_free
+    attributes:
+      label: ¿El evento es gratuito?
+      options:
+        - "Sí, es gratuito"
+        - "No, tiene costo"
+    validations:
+      required: true
+
+  - type: input
+    id: price
+    attributes:
+      label: Precio
+      description: Solo si el evento tiene costo. Deja vacío si es gratuito.
+      placeholder: "S/ 30"
+    validations:
+      required: false
+
+  - type: input
+    id: registration_url
+    attributes:
+      label: URL de registro o más información
+      placeholder: "https://forms.gle/... o https://eventbrite.com/..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tags
+    attributes:
+      label: Temas del evento
+      description: Selecciona todos los que apliquen
+      options:
+        - label: Ingeniería de Sistemas
+        - label: Ingeniería de Software
+        - label: Ciberseguridad
+        - label: Inteligencia Artificial
+        - label: Cloud Computing
+        - label: Redes y Telecomunicaciones
+        - label: DevOps
+        - label: Desarrollo Web
+        - label: Desarrollo Móvil
+        - label: Data Science
+
+  - type: input
+    id: organizer
+    attributes:
+      label: Organizador
+      description: Opcional — quién organiza el evento
+      placeholder: ej. "Facultad de Ingeniería", "Club de Ciberseguridad USIL"
+    validations:
+      required: false
