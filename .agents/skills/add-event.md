@@ -18,7 +18,7 @@ Extrae estos campos del Issue:
 - **Modalidad** → `type` (exactamente: `"Presencial"`, `"Virtual"` o `"Híbrido"`)
 - **¿Es gratuito?** → `is_free` (`true` si dice "Sí, es gratuito", `false` si no)
 - **Precio** → `price` (solo incluir si `is_free` es `false` y el campo no está vacío)
-- **URL de registro** → `registration_url`
+- **URL de registro** → `registration_url` (opcional, omitir si está vacío o dice "No response")
 - **Temas del evento** → `tags` (array, ver conversión abajo)
 - **Organizador** → `organizer` (solo incluir si no está vacío)
 
@@ -73,6 +73,7 @@ Convierte los temas seleccionados a kebab-case en minúsculas:
 
 ## Reglas importantes
 - No modificar ningún otro archivo
+- Si `registration_url` está vacío o dice "No response", omitir el campo del objeto
 - Si la fecha tiene un formato incorrecto, intentar corregirla a `YYYY-MM-DD`
 - Si la URL de registro no empieza con `https://`, agregarle el prefijo
 - Si algún campo requerido está vacío, dejar un comentario en el Issue solicitando la información faltante y no crear el PR
