@@ -83,9 +83,19 @@ body:
     id: registration_url
     attributes:
       label: URL de registro o mas informacion
-      placeholder: "https://forms.gle/..."
+      description: Opcional - deja vacio si el evento es de entrada libre
+      placeholder: "https://forms.gle/... o https://eventbrite.com/..."
     validations:
-      required: true
+      required: false
+
+  - type: input
+    id: image_url
+    attributes:
+      label: Imagen del evento
+      description: "Opcional - URL del flyer o logo. Puedes arrastrar la imagen directamente a este Issue y pegar el link que genera GitHub. Formatos: JPG, PNG, GIF, WEBP"
+      placeholder: "https://..."
+    validations:
+      required: false
 
   - type: checkboxes
     id: tags
