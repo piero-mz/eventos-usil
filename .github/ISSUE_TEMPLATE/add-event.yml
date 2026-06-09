@@ -37,9 +37,19 @@ body:
     id: location
     attributes:
       label: Lugar
+      description: Solo para eventos Presenciales o Hibridos. Deja vacio si es Virtual.
       placeholder: ej. Auditorio Principal - Sede Miraflores
     validations:
-      required: true
+      required: false
+
+  - type: input
+    id: meeting_url
+    attributes:
+      label: Link de la reunion
+      description: Solo para eventos Virtuales o Hibridos. Deja vacio si es Presencial.
+      placeholder: "https://zoom.us/... o https://meet.google.com/..."
+    validations:
+      required: false
 
   - type: dropdown
     id: type
