@@ -248,7 +248,7 @@ export default function Home() {
             </div>
             <div className="leading-tight">
               <p className="text-sm font-semibold text-slate-900">USIL</p>
-              <p className="text-xs text-slate-400">Eventos Tech</p>
+              <p className="text-xs text-slate-400">Eventos</p>
             </div>
           </div>
           <a
@@ -272,7 +272,7 @@ export default function Home() {
             Universidad San Ignacio de Loyola
           </p>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3 leading-tight">
-            Eventos Tech en USIL
+            Eventos en USIL
           </h1>
           <p className="text-slate-500 max-w-xl text-base mb-6 leading-relaxed">
             Conferencias, talleres y charlas de Sistemas, Software, Ciberseguridad,
