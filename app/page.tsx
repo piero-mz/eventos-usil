@@ -280,7 +280,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://github.com/TU-USUARIO/eventos-usil/issues/new/choose"
+              href="https://github.com/piero-mz/eventos-usil/issues/new/choose"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors"
@@ -288,7 +288,7 @@ export default function Home() {
               Proponer un evento
             </a>
             <a
-              href="https://github.com/TU-USUARIO/eventos-usil"
+              href="https://github.com/piero-mz/eventos-usil"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors"
@@ -328,7 +328,7 @@ export default function Home() {
             <p className="text-slate-400 text-sm mt-1">
               ¿Organizas uno?{" "}
               <a
-                href="https://github.com/TU-USUARIO/eventos-usil/issues/new/choose"
+                href="https://github.com/piero-mz/eventos-usil/issues/new/choose"
                 className="text-indigo-500 hover:underline"
               >
                 Publícalo aquí →
@@ -368,7 +368,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-400">
           <p>Mantenido por la comunidad USIL</p>
           <a
-            href="https://github.com/TU-USUARIO/eventos-usil/issues/new/choose"
+            href="https://github.com/piero-mz/eventos-usil/issues/new/choose"
             className="text-indigo-500 hover:text-indigo-700 transition-colors font-medium"
           >
             + Publicar un evento
